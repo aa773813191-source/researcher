@@ -1,0 +1,39 @@
+STATNOVA IN-APP PROFILE PATCH
+=============================
+
+Your current app_v6.py already has an "About" page and the name in its sidebar.
+To add a separate researcher page without replacing the analysis code:
+
+1) In the sidebar st.radio page list, add "Researcher Profile" before "About".
+2) Immediately before the existing:
+       elif page == "About":
+   insert this block:
+
+elif page == "Researcher Profile":
+    st.title("Amatalelah Abdulazez Mashhor Al-Ahdel")
+    st.subheader("Researcher | Physics | STATNOVA Developer")
+    st.markdown(
+        "Yemeni researcher with an MSc in Physics. Academic interests include "
+        "Medical Physics, Nanotechnology, Radiotherapy, iron oxide nanoparticles, "
+        "and scientific data analysis."
+    )
+    st.markdown("### Education")
+    st.markdown("- MSc in Physics — Al-Baydha University (2025)")
+    st.markdown("- BSc in Physics — University of Hodeidah (2021)")
+    st.markdown("### Research interests")
+    st.markdown(
+        "Medical Physics · Nanotechnology · Radiotherapy · "
+        "Iron Oxide Nanoparticles · Statistical Analysis"
+    )
+    st.markdown("### Selected publication")
+    st.markdown(
+        "[Improving Radiotherapy Efficacy Using Iron Oxide Nanoparticles]"
+        "(https://doi.org/10.56807/buj.v7i2.794)"
+    )
+    st.markdown("### Independent academic website")
+    st.markdown("[Researcher website](PASTE_THE_PUBLISHED_GITHUB_PAGES_URL_HERE)")
+    st.markdown("### STATNOVA")
+    st.markdown("[Open STATNOVA](https://statnova-amatalelah.streamlit.app/)")
+
+Do not paste the placeholder website URL until GitHub Pages has actually published the site.
+This patch is a separate addition; it does not modify the statistical-analysis functions.
