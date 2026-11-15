@@ -67,6 +67,10 @@
     .top{display:flex;justify-content:space-between;align-items:center;gap:18px}
     .brand{font-weight:800;letter-spacing:.16em;font-size:.85rem}
     button{border:1px solid #b8e6ff;background:#ffffff18;color:white;padding:9px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+    .language-switch{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .language-switch button{min-width:86px;transition:background .18s ease,border-color .18s ease}
+    .language-switch button.active{background:#fff;color:#075b8d;border-color:#fff}
+    .language-switch button:not(.active):hover{background:#ffffff30}
     .hero{padding:34px 0 8px}
     h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.16;margin:0 0 15px}
     .tag{color:#c9edff;font-weight:700;letter-spacing:.04em}
@@ -94,7 +98,7 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="top"><div class="brand" data-en="ACADEMIC PROFILE" data-ar="الملف الأكاديمي">ACADEMIC PROFILE</div><button id="langBtn" type="button" aria-label="Switch language">العربية</button></div>
+    <div class="top"><div class="brand" data-en="ACADEMIC PROFILE" data-ar="الملف الأكاديمي">ACADEMIC PROFILE</div><div class="language-switch" role="group" aria-label="Language selection"><button id="arabicBtn" type="button" lang="ar" aria-pressed="false">العربية</button><button id="englishBtn" type="button" lang="en" class="active" aria-pressed="true">English</button></div></div>
     <div class="hero">
       <h1 data-en="Amatalelah Abdulazez<br>Mashhor Al-Ahdel" data-ar="أمة الإله عبدالعزيز<br>مشهور الأهدل">Amatalelah Abdulazez<br>Mashhor Al-Ahdel</h1>
       <div class="tag" data-en="PHYSICIST · RESEARCHER · STATNOVA DEVELOPER" data-ar="فيزيائية · باحثة · مطوّرة STATNOVA">PHYSICIST · RESEARCHER · STATNOVA DEVELOPER</div>
@@ -168,10 +172,15 @@
     });
     document.querySelectorAll(".ar").forEach(el => el.style.display = lang === "ar" ? "block" : "none");
     document.querySelectorAll(".en").forEach(el => el.style.display = lang === "ar" ? "none" : "block");
-    document.getElementById("langBtn").textContent = lang === "en" ? "العربية" : "English";
-    document.getElementById("langBtn").setAttribute("aria-label", lang === "en" ? "Switch to Arabic" : "Switch to English");
+    const arabicBtn = document.getElementById("arabicBtn");
+    const englishBtn = document.getElementById("englishBtn");
+    arabicBtn.classList.toggle("active", lang === "ar");
+    englishBtn.classList.toggle("active", lang === "en");
+    arabicBtn.setAttribute("aria-pressed", String(lang === "ar"));
+    englishBtn.setAttribute("aria-pressed", String(lang === "en"));
   }
-  document.getElementById("langBtn").addEventListener("click", () => applyLanguage(current === "en" ? "ar" : "en"));
+  document.getElementById("arabicBtn").addEventListener("click", () => applyLanguage("ar"));
+  document.getElementById("englishBtn").addEventListener("click", () => applyLanguage("en"));
   applyLanguage("en");
 </script>
 </body>
