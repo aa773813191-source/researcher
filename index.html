@@ -78,14 +78,17 @@
     h3{color:var(--navy);margin:8px 0}
     .pill{display:inline-block;background:var(--sky);color:#075b8d;border-radius:999px;padding:6px 11px;margin:4px;font-size:.9rem}
     .publication{border-left:4px solid #18a6db;padding:4px 0 4px 15px}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-    .linkbtn{display:inline-block;background:#fff;color:#075b8d;border:1px solid #a8dafa;border-radius:11px;padding:10px 15px;text-decoration:none;font-weight:700}
+    .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px;max-width:760px}
+    .linkbtn{display:flex;align-items:center;justify-content:center;min-height:54px;text-align:center;background:#fff;color:#075b8d;border:1px solid #a8dafa;border-radius:12px;padding:12px 16px;text-decoration:none;font-weight:700;line-height:1.45;transition:background .18s ease,transform .18s ease,border-color .18s ease}
+    .linkbtn:hover{background:#eaf7ff;border-color:#55b8e8;transform:translateY(-2px)}
+    .linkbtn:focus-visible{outline:3px solid #16a6d8;outline-offset:3px}
+    .linkbtn.primary{background:#e3f5ff;border-color:#6fc8ef;color:#064d79}
     .achievement{border-bottom:1px solid #e6f0f6;padding:10px 0}.achievement:last-child{border:0}
     footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:.9rem}
     .ar{direction:rtl;text-align:right;font-family:Arial,"Noto Sans Arabic",sans-serif}
     .en{direction:ltr;text-align:left}
     .langblock{margin-top:8px}
-    @media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding-top:25px}header{padding-top:28px}}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.actions{grid-template-columns:1fr;max-width:none}.hero{padding-top:25px}header{padding-top:28px}}
   </style>
 </head>
 <body>
@@ -97,10 +100,10 @@
       <div class="tag" data-en="PHYSICIST · RESEARCHER · STATNOVA DEVELOPER" data-ar="فيزيائية · باحثة · مطوّرة STATNOVA">PHYSICIST · RESEARCHER · STATNOVA DEVELOPER</div>
       <p class="lead" data-en="Physicist and researcher with a Master’s degree in Physics. Author of a peer-reviewed publication on radiotherapy and iron oxide nanoparticles, and developer of STATNOVA, a platform for research data analysis." data-ar="باحثة في الفيزياء حاصلة على درجة الماجستير، ولها بحث علمي محكّم في مجال العلاج الإشعاعي وجسيمات أكسيد الحديد النانوية. كما أنها مطوّرة منصة STATNOVA للتحليل الإحصائي ودعم الأبحاث.">Physicist and researcher with a Master’s degree in Physics. Author of a peer-reviewed publication on radiotherapy and iron oxide nanoparticles, and developer of STATNOVA, a platform for research data analysis.</p>
       <div class="actions">
-        <a class="linkbtn" href="https://statnova-amatalelah.netlify.app/" target="_blank" rel="noopener" data-en="STATNOVA Official Website" data-ar="الموقع الرسمي لمنصة STATNOVA">STATNOVA Official Website</a>
+        <a class="linkbtn primary" href="https://statnova-amatalelah.netlify.app/" target="_blank" rel="noopener" data-en="STATNOVA Official Website" data-ar="الموقع الرسمي لمنصة STATNOVA">STATNOVA Official Website</a>
         <a class="linkbtn" href="https://statnova-amatalelah2.streamlit.app/" target="_blank" rel="noopener" data-en="Open STATNOVA App" data-ar="فتح تطبيق STATNOVA">Open STATNOVA App</a>
         <a class="linkbtn" href="https://doi.org/10.56807/buj.v7i2.794" target="_blank" rel="noopener" data-en="Read Published Research" data-ar="قراءة البحث المنشور">Read Published Research</a>
-        <a class="linkbtn" href="https://orcid.org/0009-0006-5666-3091" target="_blank" rel="me noopener" data-en="ORCID Profile" data-ar="الملف البحثي على ORCID">ORCID Profile</a>
+        <a class="linkbtn" href="https://orcid.org/0009-0006-5666-3091" target="_blank" rel="me noopener" data-en="ORCID Researcher Profile" data-ar="الملف البحثي على ORCID">ORCID Researcher Profile</a>
       </div>
     </div>
   </div>
